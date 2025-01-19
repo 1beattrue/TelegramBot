@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  telegram-bot:
+    build: .
+    container_name: my-telegram-bot
+    restart: unless-stopped
+    command: python main.py
