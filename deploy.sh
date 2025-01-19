@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Обновление кода
-git pull origin main
+git pull origin master
 
 # Перезапуск контейнера
 docker-compose down
