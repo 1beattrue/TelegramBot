@@ -9,5 +9,7 @@ docker rm -f my-telegram-bot || true
 # Построение нового образа из Dockerfile
 docker build -t telegram-bot .
 
-# Запуск нового контейнера
-docker run -d --name my-telegram-bot --restart unless-stopped telegram-bot
+# Запуск нового контейнера с примонтированной БД
+docker run -d --name my-telegram-bot --restart unless-stopped \
+  -v "$(pwd)/vpn_manager.db:/app/vpn_manager.db" telegram-bot
+
